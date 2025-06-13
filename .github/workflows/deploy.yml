@@ -3,7 +3,7 @@ name: deploy
 on:
   push:
     branches:
-      - main  # 确保和你的源分支一致
+      - main  # 或 master，根据你的主分支名调整
 
 jobs:
   deploy:
@@ -25,5 +25,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_TOKEN }}  # ← 使用你自己的 PERSONAL_TOKEN
           publish_dir: ./public
